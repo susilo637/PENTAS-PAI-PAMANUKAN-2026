@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand: #047857; /* emerald-700 */
+  --color-brand-light: #ecfdf5; /* emerald-50 */
+  --color-brand-accent: #10b981; /* emerald-500 */
+  --color-surface: #f8fafc; /* slate-50 */
+  --color-panel: #ffffff;
+  --color-text: #0f172a; /* slate-900 */
+  --color-text-muted: #64748b; /* slate-500 */
+  --color-border: #e2e8f0; /* slate-200 */
+}
+
+@layer base {
+  @media print {
+    nav, header, footer, button, input, .no-print {
+      display: none !important;
+    }
+    body {
+      background: white !important;
+      color: black !important;
+    }
+    main {
+       padding: 0 !important;
+    }
+    div, section {
+      border-color: #ddd !important;
+      box-shadow: none !important;
+    }
+  }
+  body {
+    @apply bg-surface text-text font-sans;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-sans font-bold;
+  }
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/20;
+}
